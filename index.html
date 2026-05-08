@@ -3,277 +3,191 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathan Ghabour — Product Consultant</title>
+  <title>Nathan Ghabour — Digital Product Creation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <span class="nav-name">Nathan Ghabour</span>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
   <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <p class="hero-eyebrow">Product Consultant</p>
-          <h1>Body data.<br>Physical science.<br>Software.</h1>
-          <p class="hero-sub">15 years building at the intersection of material science, body measurement, and product engineering — from a 3D-printed orthotic startup to Nike's sizing infrastructure.</p>
-          <div class="hero-cta">
-            <a href="#work" class="btn btn-primary">View Work</a>
-            <a href="mailto:hello@nathanghabour.com" class="btn btn-outline">Get in Touch</a>
-          </div>
-          <p class="hero-contact">Portland, OR · <a href="mailto:hello@nathanghabour.com">hello@nathanghabour.com</a></p>
-        </div>
-        <div class="hero-photo-wrap">
-          <div class="hero-photo-circle">
-            <!-- Replace src with your actual photo -->
-            <img src="nathan-photo.jpg" alt="Nathan Ghabour" onerror="this.style.display='none'">
-            <span class="photo-initials">NG</span>
-          </div>
-        </div>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-accent"></div>
+      <h1>Nathan Ghabour</h1>
+      <div class="hero-tagline">Digital Product Creation</div>
+      <p class="hero-description">I help teams figure out where they are in their digital product transformation, what's missing, and how to move forward.</p>
+      <div class="hero-ctas">
+        <a href="#work" class="btn-secondary">View work</a>
+        <a href="mailto:hello@nathanghabour.com" class="btn-primary">Get in touch</a>
+      </div>
+      <div class="hero-contact">
+        hello@nathanghabour.com &bull; 908.494.3652 &bull; Portland, OR
       </div>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-stat">
-          <span class="stat-num">15</span>
-          <span class="stat-label">Years</span>
-        </div>
-        <div class="about-stat">
-          <span class="stat-num">1.1M</span>
-          <span class="stat-label">Body scans consolidated at Nike</span>
-        </div>
-        <div class="about-stat">
-          <span class="stat-num">2×</span>
-          <span class="stat-label">Accuracy vs. leading smart scales (Amazon Halo)</span>
-        </div>
-        <div class="about-stat">
-          <span class="stat-num">3</span>
-          <span class="stat-label">Acquired companies (SOLS, Body Labs, Nike exit)</span>
-        </div>
-      </div>
-      <div class="about-text">
-        <p>Most people are either material scientists <em>or</em> software PMs <em>or</em> team builders. The rare thing is being all three — and having a 15-year track record proving it. SOLS → Body Labs → Amazon → Nike is one continuous story: using body data and physical science to move beyond one-size-fits-all products.</p>
-      </div>
+    <div class="hero-photo">
+      <div class="photo-placeholder"></div>
     </div>
-  </section>
+  </div>
 
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="container">
-      <h2 class="section-title">Work</h2>
+  <!-- WORK SECTION -->
+  <div class="section" id="work">
+    <div class="section-accent"></div>
+    <h2>Work</h2>
+    <p class="section-intro">"How can we use 3D data and advanced manufacturing to move beyond one-size-fits-all products?"</p>
 
-      <div class="work-grid">
+    <div class="projects-grid">
 
-        <!-- SOLS -->
-        <article class="work-card">
-          <div class="card-media sols-media">
-            <!-- Vimeo embed: replace VIDEO_ID with the ID from vimeo.com/wearsols -->
-            <iframe
-              src="https://player.vimeo.com/video/VIDEO_ID?autoplay=0&title=0&byline=0&portrait=0&color=00B5A0"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
-              title="SOLS — 3D-Printed Custom Orthotics">
-            </iframe>
+      <!-- SOLS -->
+      <div class="project-card">
+        <div class="project-media media-sols">
+          <iframe
+            src="https://player.vimeo.com/video/122751337?autoplay=0&title=0&byline=0&portrait=0&color=00B5A0"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="SOLS">
+          </iframe>
+        </div>
+        <div class="project-content">
+          <div class="project-year">2013 &mdash; 2016</div>
+          <h3>SOLS</h3>
+          <p class="project-description">Invented a product category from scratch. Co-invented the first fully automated 3D-printed custom orthotic pipeline — smartphone photo to shipped orthotic in days, zero human intervention.</p>
+          <div class="project-tags">
+            <span class="tag">Biomechanical Engineer</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Founding Team</span>
           </div>
-          <div class="card-content">
-            <div class="card-header">
-              <div>
-                <h3 class="card-title">SOLS</h3>
-                <p class="card-role">Founding Team · Biomechanical Engineer</p>
-              </div>
-              <span class="card-date">2013–2016</span>
-            </div>
-            <p class="card-desc">Co-invented the first fully automated 3D-printed custom orthotic pipeline. Smartphone photo → algorithms → custom CAD → 3D-printed orthotic shipped in days. Zero human intervention. Selected NASA-grade Nylon 11; used FEA to lock in printing parameters and weight-specific heel shells.</p>
-            <div class="card-tags">
-              <span class="tag">3D Printing</span>
-              <span class="tag">FEA</span>
-              <span class="tag">Biomechanics</span>
-              <span class="tag">Acquired by Aetrex</span>
-            </div>
-          </div>
-        </article>
+        </div>
+      </div>
 
-        <!-- Body Labs -->
-        <article class="work-card">
-          <div class="card-media body-labs-media">
-            <img src="body-labs-2.gif" alt="Body Labs — 3D body modeling" class="card-gif">
+      <!-- Body Labs -->
+      <div class="project-card">
+        <div class="project-media media-bodylabs">
+          <img src="body-labs-2.gif" alt="Body Labs — 3D body modeling capabilities: Pose, Animate, Measure, Compare, Average, Analyze, Predict, Design" class="bodylabs-gif">
+        </div>
+        <div class="project-content">
+          <div class="project-year">2016 &mdash; 2017</div>
+          <h3>Body Labs</h3>
+          <p class="project-description">Turned research into a commercial product. As sole PM, commercialized SMPL — a state-of-the-art statistical body model — across eight capabilities and two markets.</p>
+          <div class="project-tags">
+            <span class="tag">Product Manager</span>
+            <span class="tag">ML/CV</span>
+            <span class="tag">Acquired by Amazon</span>
           </div>
-          <div class="card-content">
-            <div class="card-header">
-              <div>
-                <h3 class="card-title">Body Labs</h3>
-                <p class="card-role">Product Manager</p>
-              </div>
-              <span class="card-date">2016–2018</span>
-            </div>
-            <p class="card-desc">Commercialized SMPL — a state-of-the-art statistical body model from academic research — as sole PM. Owned product across evolving input modalities: laser scanners → smartphone cameras → CNN-based inference. Eight capabilities shipped: Pose, Animate, Measure, Compare, Average, Analyze, Predict, Design.</p>
-            <div class="card-tags">
-              <span class="tag">Body Modeling</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">B2B + B2C</span>
-              <span class="tag">Acquired by Amazon</span>
-            </div>
-          </div>
-        </article>
+        </div>
+      </div>
 
-        <!-- Amazon -->
-        <article class="work-card amazon-card">
-          <div class="card-media amazon-media">
-            <div class="amazon-bg">
-              <div class="amazon-logo-wrap">
-                <svg class="amazon-logo" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-label="Amazon">
-                  <text x="0" y="46" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="white" letter-spacing="-1">amazon</text>
-                  <path d="M 4 54 Q 60 68 120 58 Q 160 50 185 40" stroke="#FF9900" stroke-width="4" fill="none" stroke-linecap="round"/>
-                  <polygon points="185,36 192,44 178,47" fill="#FF9900"/>
-                </svg>
-                <p class="amazon-sub">AWS · Amazon Halo</p>
-              </div>
-            </div>
-          </div>
-          <div class="card-content">
-            <div class="card-header">
-              <div>
-                <h3 class="card-title">Amazon / AWS</h3>
-                <p class="card-role">Technical PM · ML Validation Lead</p>
-              </div>
-              <span class="card-date">2018–2020</span>
-            </div>
-            <p class="card-desc">Led migration of Body Labs body-modeling tech into AWS at Amazon scale. Then as ML Validation Lead on Amazon Halo: validated CV algorithms using smartphone cameras for body composition — 2× the accuracy of leading smart scales. Facilitated data capture and ML validation for every Digital Health feature before launch.</p>
-            <div class="card-tags">
-              <span class="tag">AWS</span>
-              <span class="tag">Computer Vision</span>
-              <span class="tag">Health Tech</span>
-              <span class="tag">ML Validation</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Nike -->
-        <article class="work-card nike-card">
-          <div class="card-media nike-media">
-            <div class="nike-bg">
-              <svg class="nike-swoosh" viewBox="0 0 300 120" xmlns="http://www.w3.org/2000/svg" aria-label="Nike">
-                <path d="M 15 90 C 50 30, 160 -5, 285 35 C 220 52, 80 70, 15 90 Z" fill="white" opacity="0.95"/>
+      <!-- Amazon -->
+      <div class="project-card">
+        <div class="project-media media-amazon">
+          <div class="amazon-inner">
+            <div class="amazon-halo-ring">
+              <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="halo-svg">
+                <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+                <circle cx="40" cy="40" r="26" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+                <circle cx="40" cy="40" r="18" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                <text x="40" y="45" text-anchor="middle" font-size="16" fill="white" font-family="Arial">◎</text>
               </svg>
-              <p class="nike-tagline">Just Do It.</p>
+            </div>
+            <div class="amazon-text-wrap">
+              <div class="amazon-label">Amazon Halo</div>
+              <div class="amazon-sub">Body Composition · ML Validation</div>
             </div>
           </div>
-          <div class="card-content">
-            <div class="card-header">
-              <div>
-                <h3 class="card-title">Nike NXT</h3>
-                <p class="card-role">Digital Product Director</p>
-              </div>
-              <span class="card-date">2020–2024</span>
-            </div>
-            <p class="card-desc">Built Nike's sizing infrastructure from scratch — a body data platform consolidating 1.1M body scans. Enabled anyone at Nike to query population data and surface insights: from NSRL scientists asking "what does the 95th-percentile female basketball player look like?" to marketing directors targeting consumers by size. Built three teams (engineering, ML/CV, design) from zero.</p>
-            <div class="card-tags">
-              <span class="tag">Body Data Platform</span>
-              <span class="tag">Sizing Systems</span>
-              <span class="tag">1.1M Scans</span>
-              <span class="tag">Team Building</span>
-            </div>
+        </div>
+        <div class="project-content">
+          <div class="project-year">2017 &mdash; 2019</div>
+          <h3>Amazon</h3>
+          <p class="project-description">Led ML validation for body composition analysis. Validated CV algorithms using smartphone cameras — 2× the accuracy of leading smart scales. Navigated compliance for collecting body photos at scale.</p>
+          <div class="project-tags">
+            <span class="tag">Technical PM</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">AWS</span>
           </div>
-        </article>
-
-      </div><!-- /.work-grid -->
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <h2 class="section-title">Services</h2>
-      <p class="section-sub">Available project-based, fractional, or as an adoption partner.</p>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon">⬡</div>
-          <h3>Sizing &amp; Strategy</h3>
-          <p>Inclusive size systems from real population data. Roadmap from body scan to grade rule.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">◈</div>
-          <h3>Data to Design</h3>
-          <p>Turn body data and biomechanical research into assets designers can actually use.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">⊕</div>
-          <h3>Build vs. Buy</h3>
-          <p>Make the call on body-data software, then run vendor eval, integration, or custom PM.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">◎</div>
-          <h3>Digital Workflow</h3>
-          <p>Audit and improve DPC pipeline across Capture, Design, and Make.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">◐</div>
-          <h3>Innovation Roadmap</h3>
-          <p>Define digital transformation. Build the business case. Identify where to start.</p>
-        </div>
-
-      </div>
-
-      <div class="industries">
-        <p class="industries-label">Industries</p>
-        <div class="industries-list">
-          <span>Apparel &amp; Footwear</span>
-          <span>Wearables</span>
-          <span>Sports Equipment</span>
-          <span>Medical Apparel</span>
-          <span>Automotive Ergonomics</span>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <h2>Let's talk.</h2>
-        <p>If you're working on body data, sizing systems, or digital product strategy — I'd like to hear about it.</p>
-        <a href="mailto:hello@nathanghabour.com" class="btn btn-primary btn-lg">hello@nathanghabour.com</a>
-        <div class="contact-links">
-          <a href="https://linkedin.com/in/nathanghabour" target="_blank" rel="noopener">LinkedIn</a>
-          <span>·</span>
-          <a href="tel:9084943652">908.494.3652</a>
+      <!-- Nike -->
+      <div class="project-card">
+        <div class="project-media media-nike">
+          <div class="nike-swoosh-wrap">
+            <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" class="nike-svg" aria-label="Nike">
+              <path d="M 12 78 C 55 18, 175 -8, 288 30 C 215 50, 72 68, 12 78 Z" fill="white"/>
+            </svg>
+          </div>
+          <div class="nike-quote">
+            <div class="nike-small">To become</div>
+            <div class="nike-large">THE MOST INCLUSIVE<br>COMPANY IN THE WORLD</div>
+          </div>
+          <div class="nike-badge">🔒 Internal video<br>available on request</div>
+        </div>
+        <div class="project-content">
+          <div class="project-year">2019 &mdash; 2024</div>
+          <h3>Nike NXT</h3>
+          <p class="project-description">Built the infrastructure that changed how a $50B company sizes its products. Consolidated 1.1M body scans into a platform that let anyone at Nike — from NSRL scientists to marketing directors — query population data and get answers.</p>
+          <div class="project-tags">
+            <span class="tag">Digital Product Director</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">1.1M Scans</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>© 2026 Nathan Ghabour · Portland, OR</p>
+    </div><!-- /.projects-grid -->
+  </div><!-- /.section -->
+
+  <!-- SERVICES SECTION -->
+  <div class="section services-section" id="services">
+    <div class="section-accent" style="margin-left: auto; margin-right: auto;"></div>
+    <h2 style="text-align: center;">What I can help with</h2>
+    <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">Product management, strategy, and director-level leadership on digital product creation, machine learning, computer vision, vendor relations, and 3D printing.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Sizing &amp; Strategy</h3>
+        <p>Define inclusive size systems grounded in real population data. Build the roadmap from body scan to grade rule.</p>
+      </div>
+      <div class="service-card">
+        <h3>Data to Design</h3>
+        <p>Turn body data and biomechanical research into assets designers can actually use.</p>
+      </div>
+      <div class="service-card">
+        <h3>Tech Adoption</h3>
+        <p>Bridge the gap between body data vendors and brands. Translate data into decisions teams can act on.</p>
+      </div>
+      <div class="service-card">
+        <h3>Digital Workflow</h3>
+        <p>Audit and improve your DPC pipeline across Capture, Design, and Make. Connect the tools into a system that works.</p>
+      </div>
+      <div class="service-card">
+        <h3>Innovation Roadmap</h3>
+        <p>Define what digital transformation means for your org. Build the business case and identify where to start.</p>
+      </div>
     </div>
-  </footer>
+
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Industries</h3>
+        <p>Apparel &amp; Footwear &middot; Wearables &middot; Sports Equipment &middot; Medical Apparel &middot; Automotive Ergonomics</p>
+      </div>
+      <div class="info-box">
+        <h3>Engagement</h3>
+        <p>Project-based engagements, fractional director roles, and technology adoption partnerships. Available to brands and body data technology companies.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FOOTER -->
+  <div class="cta-footer" id="contact">
+    <h2>Ready to move forward?</h2>
+    <p>Let's talk about where you are in your digital product transformation and how I can help.</p>
+    <div class="cta-buttons">
+      <a href="mailto:hello@nathanghabour.com" class="btn-primary">hello@nathanghabour.com</a>
+      <a href="https://linkedin.com/in/nathanghabour" target="_blank" rel="noopener" class="btn-secondary">LinkedIn</a>
+    </div>
+    <div class="contact-info">908.494.3652 &middot; Portland, OR</div>
+  </div>
 
 </body>
 </html>
