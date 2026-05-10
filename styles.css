@@ -305,90 +305,14 @@ a { text-decoration: none; color: inherit; }
 
 /* ===== AMAZON ===== */
 .media-amazon {
-  background: linear-gradient(145deg, #1A2533 0%, #2D3E4F 40%, #C97A00 100%);
-  color: white;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.amazon-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.halo-svg { width: 64px; height: 64px; }
-
-.amazon-label {
-  font-size: 19px;
-  font-weight: 500;
-  color: white;
-  text-align: center;
-  letter-spacing: -0.01em;
-}
-
-.amazon-sub {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.55);
-  text-align: center;
+  background: #000;
+  padding: 0;
 }
 
 /* ===== NIKE ===== */
 .media-nike {
   background: #000;
-  color: white;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 22px 26px;
-  gap: 10px;
-  position: relative;
-}
-
-.nike-swoosh-wrap { width: 100%; }
-
-.nike-svg {
-  width: 160px;
-  height: auto;
-  display: block;
-  opacity: 0.95;
-}
-
-.nike-quote {
-  font-family: 'Inter', Arial, sans-serif;
-  max-width: 220px;
-}
-
-.nike-small {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.5;
-  margin-bottom: 5px;
-}
-
-.nike-large {
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: 0.02em;
-}
-
-.nike-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  background: rgba(255,255,255,0.1);
-  border: 0.5px solid rgba(255,255,255,0.15);
-  padding: 6px 10px;
-  border-radius: 5px;
-  font-size: 9px;
-  text-align: center;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.6);
-  letter-spacing: 0.02em;
+  padding: 0;
 }
 
 /* ===== SERVICES ===== */
