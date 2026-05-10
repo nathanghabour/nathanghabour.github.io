@@ -278,6 +278,14 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: 0.01em;
 }
 
+/* Real photo cards */
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ===== SOLS ===== */
 .media-sols { background: #0A0A0A; }
 
