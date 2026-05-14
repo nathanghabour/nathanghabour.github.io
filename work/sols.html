@@ -7,6 +7,57 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Image visuals override the dashed placeholder */
+    .case-visual-img {
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 240px;
+    }
+    .case-visual-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+    /* Hero product image below video */
+    .hero-product {
+      max-width: 820px;
+      margin: 48px auto 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(217,120,71,0.2);
+    }
+    .hero-product img {
+      width: 100%;
+      display: block;
+      background: #fff;
+    }
+    /* Process cards with photos */
+    .process-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    /* Gallery strip */
+    .image-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin: 40px 0;
+    }
+    .image-strip img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -40,6 +91,9 @@
         title="SOLS — 3D Printed Custom Orthotics">
       </iframe>
     </div>
+    <div class="hero-product">
+      <img src="../assets/sols/hero-orthotic.png" alt="SOLS custom 3D-printed orthotic — side profile">
+    </div>
   </div>
 
   <!-- THE CHALLENGE -->
@@ -48,6 +102,12 @@
     <h2>A $500 problem with a one-size-fits-all answer</h2>
     <p>Traditional custom orthotics cost $500 or more, required weeks of waiting, and depended entirely on the specialist in the room. The process was slow, expensive, and inaccessible to the vast majority of people suffering from foot pain. Off-the-shelf insoles left a gap that technology hadn't yet filled.</p>
     <p>The question at SOLS: could we automate the entire pipeline — from a smartphone photo to a finished custom product — with zero human intervention? Could we turn a bespoke craft into a scalable system?</p>
+
+    <div class="image-strip" style="margin-top: 40px;">
+      <img src="../assets/sols/traditional-orthotics.jpeg" alt="Traditional orthotic insoles in various materials — leather, foam, fabric">
+      <img src="../assets/sols/prototypes.jpeg" alt="SOLS prototype orthotics in red, white, and black — material testing phase">
+      <img src="../assets/sols/sols-product.jpeg" alt="SOLS product ecosystem — orthotic, carrying case, iOS app, and prescription pad">
+    </div>
   </div>
 
   <!-- THE APPROACH -->
@@ -65,14 +125,14 @@
           <li>Designed weight-specific heel shells to distribute load based on patient biomechanics</li>
         </ul>
       </div>
-      <div class="case-visual">
-        FEA stress mapping showed where load concentration was highest, informing wall thickness decisions across the orthotic geometry.
+      <div class="case-visual-img">
+        <img src="../assets/sols/biomech-maps.png" alt="Biomechanical pressure contour maps — FEA analysis showing load distribution across foot geometry">
       </div>
     </div>
 
     <div class="case-split">
-      <div class="case-visual">
-        Material testing matrix: compression cycles, fatigue modeling, and real-world wear trials with clinical podiatrists and patients.
+      <div class="case-visual-img">
+        <img src="../assets/sols/foot-wireframe.jpeg" alt="3D foot mesh wireframe from three angles — the automated design system input model">
       </div>
       <div class="case-split-text">
         <h3>Automated Design System</h3>
@@ -105,17 +165,17 @@
     <h2>From capture to creation — in days, not weeks</h2>
     <div class="process-grid">
       <div class="process-card">
-        <div class="process-icon">📱</div>
+        <img src="../assets/sols/podiatrist-ipad.jpeg" alt="Podiatrist using iPad to capture foot photos and enter digital prescription" class="process-card-img">
         <h4>1. Capture</h4>
         <p>Podiatrist uses iOS app to photograph the patient's foot and enter a structured digital prescription — no plaster casting, no lab shipping.</p>
       </div>
       <div class="process-card">
-        <div class="process-icon">⚙️</div>
+        <img src="../assets/sols/foot-wireframe.jpeg" alt="3D foot mesh wireframe — automated CAD generation" class="process-card-img">
         <h4>2. Design</h4>
         <p>Algorithms process anatomical measurements and prescription data, automatically generating a patient-specific 3D CAD model. Zero human intervention.</p>
       </div>
       <div class="process-card">
-        <div class="process-icon">🖨️</div>
+        <img src="../assets/sols/3d-printing.jpeg" alt="Pulling finished orthotic from SLS 3D printer powder bed" class="process-card-img">
         <h4>3. Make</h4>
         <p>Nylon 11 SLS 3D printing produces the finished orthotic at manufacturing scale — the same geometry every time, to micrometer precision.</p>
       </div>
