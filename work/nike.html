@@ -4,98 +4,147 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nike NXT — Nathan Ghabour</title>
+  <meta name="description" content="How Nathan Ghabour built the body data infrastructure that changed how Nike — a $50B company — sizes its products, from 1.1M scans to a platform every team could use.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
   <style>
-    .hero-product {
+    .hero-photo-wrap {
       max-width: 820px;
       margin: 48px auto 0;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(217,120,71,0.2);
+      border: 2px solid rgba(217,120,71,0.4);
     }
-    .hero-product img {
+    .hero-photo-wrap img {
       width: 100%;
       display: block;
-      object-fit: cover;
     }
-    .stat-row {
+    .scale-stat-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
       margin: 40px 0;
     }
-    .stat-box {
+    .scale-stat {
       background: #FFFFFF;
-      border: 0.5px solid #D3D1C7;
-      border-radius: 12px;
-      padding: 28px 24px;
+      border: 1px solid #E8E6DF;
+      border-radius: 10px;
+      padding: 22px 16px;
       text-align: center;
-      border-top: 3px solid #D97847;
     }
-    .stat-number {
-      font-size: 36px;
-      font-weight: 600;
-      color: #2C2C2A;
+    .scale-stat:nth-child(1) { border-top: 3px solid #D97847; }
+    .scale-stat:nth-child(2) { border-top: 3px solid #00B4D8; }
+    .scale-stat:nth-child(3) { border-top: 3px solid #E9B949; }
+    .scale-stat:nth-child(4) { border-top: 3px solid #D97847; }
+    .scale-stat-num {
+      font-size: 32px;
+      font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1;
       margin-bottom: 8px;
+      color: #2C2C2A;
     }
-    .stat-label {
-      font-size: 13px;
+    .scale-stat-label {
+      font-size: 12px;
       color: #73726C;
       line-height: 1.5;
     }
-    .case-visual-img {
-      border-radius: 12px;
-      overflow: hidden;
-      min-height: 240px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #000;
-    }
-    .case-visual-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 12px;
-    }
-    .team-grid {
+    .outputs-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 32px 0;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 40px 0;
     }
-    .team-chip {
-      background: #FDF9EC;
-      border: 0.5px solid #E9B949;
-      border-radius: 8px;
-      padding: 16px;
+    .output-card {
+      background: #FFFFFF;
+      border: 1px solid #E8E6DF;
+      border-radius: 10px;
+      padding: 22px 22px;
+    }
+    .output-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: #2C2C2A;
+      letter-spacing: -0.01em;
+    }
+    .output-card p {
+      font-size: 13px;
+      color: #73726C;
+      margin: 0;
+      line-height: 1.6;
+    }
+    .output-card-accent {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .accent-rust { background: #FDF3ED; color: #B85C2F; }
+    .accent-cyan { background: #E8F7FA; color: #0096C7; }
+    .accent-mustard { background: #FDF9EC; color: #9D7210; }
+    .platform-diagram {
+      background: #FFFFFF;
+      border: 1px solid #E8E6DF;
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .platform-diagram-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #73726C;
+      margin-bottom: 20px;
       text-align: center;
     }
-    .team-chip-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #9D7210;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+    .platform-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
     }
-    .team-chip-desc {
+    .platform-cell {
+      background: #F8F8F6;
+      border-radius: 6px;
+      padding: 10px 12px;
       font-size: 12px;
-      color: #73726C;
+      color: #4A4A4A;
+      text-align: center;
       line-height: 1.4;
     }
-    @media (max-width: 768px) {
-      .stat-row { grid-template-columns: 1fr 1fr; }
-      .team-grid { grid-template-columns: 1fr 1fr; }
+    .platform-layer-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #D97847;
+      text-align: center;
+      margin: 4px 0 8px;
     }
-    @media (max-width: 480px) {
-      .stat-row { grid-template-columns: 1fr; }
-      .team-grid { grid-template-columns: 1fr; }
+    .video-note {
+      background: #F8F8F6;
+      border: 1px dashed #D3D1C7;
+      border-radius: 8px;
+      padding: 28px;
+      text-align: center;
+      color: #73726C;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .video-note strong { color: #2C2C2A; }
+    @media (max-width: 900px) {
+      .scale-stat-row { grid-template-columns: repeat(2, 1fr); }
+      .outputs-grid { grid-template-columns: 1fr; }
+      .platform-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .scale-stat-row { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -120,32 +169,36 @@
   <div class="case-hero">
     <div class="case-hero-accent"></div>
     <div class="case-hero-year">2019 &mdash; 2024</div>
-    <h1>Body Data as<br>Infrastructure at Nike</h1>
-    <p class="case-hero-subtitle">Building the 1.1M body-scan database and question-answering platform that changed how a $50B company sizes its products.</p>
-    <div class="hero-product">
-      <img src="../Nike_photo.jpg" alt="Nike NXT — body scan technology and digital product creation">
+    <h1>Building Infrastructure That Changed<br>How a $50B Company Sizes Products</h1>
+    <p class="case-hero-subtitle">Turning 1.1 million body scans into a platform where anyone at Nike could query population data and get answers that shaped what they made. From research scientists to marketing directors.</p>
+    <div class="hero-photo-wrap">
+      <img src="../Nike_photo.jpg" alt="Nike Fit for Everybody — inclusive sizing initiative">
     </div>
   </div>
 
   <!-- THE CHALLENGE -->
   <div class="case-section">
     <div class="case-label">The Challenge</div>
-    <h2>A $50B company sizing products for a body it didn't understand</h2>
-    <p>Nike designs apparel, footwear, and equipment for every human body on the planet. But for decades, size systems were built on intuition, legacy grade rules, and sample populations that didn't reflect the diversity of who actually wears Nike products. The data existed — in scattered scan databases, research files, and siloed science teams — but no one could access it, query it, or act on it.</p>
-    <p>The challenge: build the body data infrastructure that would let Nike size for real human bodies at scale — from the research lab to the design studio to the executive meeting. And do it by building a team from scratch.</p>
+    <h2>Sizing built for mannequins, not people</h2>
+    <p>Nike's sizing system had been built around a small set of idealized mannequin measurements, the same approach the industry had used for decades. The result: products that fit a narrow slice of the population well, and everyone else poorly. High return rates. Inventory inefficiencies. A growing gap between Nike's stated commitment to serving every athlete and what the products actually delivered.</p>
+    <p>The data existed. Nike had 1.1 million body scans sitting in fragmented archives, external datasets, and portable scanner campaigns. But it was inaccessible, inconsistently formatted, and disconnected from the design and product teams who needed it. The goal: turn body data from a research asset into infrastructure that every team at Nike could use to make better products.</p>
 
-    <div class="stat-row">
-      <div class="stat-box">
-        <div class="stat-number">1.1M</div>
-        <div class="stat-label">Body scans consolidated<br>into one platform</div>
+    <div class="scale-stat-row">
+      <div class="scale-stat">
+        <div class="scale-stat-num" style="color: #D97847;">1.1M</div>
+        <div class="scale-stat-label">body scans consolidated into a single platform</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-number">$50B</div>
-        <div class="stat-label">Product line informed<br>by body data</div>
+      <div class="scale-stat">
+        <div class="scale-stat-num" style="color: #00B4D8;">3</div>
+        <div class="scale-stat-label">teams built from scratch: Engineering, ML/CV, Design</div>
       </div>
-      <div class="stat-box">
-        <div class="stat-number">5yr</div>
-        <div class="stat-label">Building the team,<br>platform, and strategy</div>
+      <div class="scale-stat">
+        <div class="scale-stat-num" style="color: #E9B949;">5yr</div>
+        <div class="scale-stat-label">multi-year ML strategy with executive sponsorship</div>
+      </div>
+      <div class="scale-stat">
+        <div class="scale-stat-num" style="color: #D97847;">∞</div>
+        <div class="scale-stat-label">body data became permanent infrastructure, not a project</div>
       </div>
     </div>
   </div>
@@ -153,86 +206,144 @@
   <!-- THE APPROACH -->
   <div class="case-section" style="padding-top: 0;">
     <div class="case-label">The Approach</div>
-    <h2>Three pillars: data, platform, people</h2>
+    <h2>From fragmented archives to living infrastructure</h2>
 
     <div class="case-split">
       <div class="case-split-text">
-        <h3>Building the Body Scan Database</h3>
+        <h3>Building the Data Foundation</h3>
         <ul>
-          <li>Consolidated body scan data from multiple sources — NSRL lab studies, third-party datasets, athlete captures — into a single governed repository</li>
-          <li>Established data standards, quality controls, and provenance tracking for 1.1M body scans</li>
-          <li>Built representation frameworks to ensure the database reflected the diversity of Nike's global customer base</li>
-          <li>Created the scan collection protocols and field study infrastructure for ongoing data capture</li>
+          <li>Consolidated 1.1 million body scans from three sources: portable scanner campaigns across global markets, external third-party datasets, and Nike's historical scan archives</li>
+          <li>Built the data pipeline to harmonize inconsistent scan formats, resolutions, and metadata schemas across decades of collection methods</li>
+          <li>Developed anthropometric diversity analysis: not just larger sample sizes, but ensuring the data represented the full range of body geometries Nike's products needed to fit</li>
+          <li>Created the first body type clustering system for Nike, a principled way to group the scan population so grading and design decisions could be made against real data</li>
         </ul>
       </div>
-      <div class="case-visual-img" style="background: #111; min-height: 280px;">
-        <img src="../Nike_photo.jpg" alt="Nike body scan data collection and analysis">
+      <div class="case-visual">
+        <div style="text-align: left; width: 100%;">
+          <div style="font-size: 12px; color: #D97847; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px;">Data Sources</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 12px; background: #FDF3ED; border-radius: 6px; padding: 12px 14px;">
+              <div style="font-size: 20px; font-weight: 700; color: #D97847; min-width: 32px;">↗</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #2C2C2A;">Portable Scanner Campaigns</div>
+                <div style="font-size: 12px; color: #73726C;">Global markets, diverse populations</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; background: #E8F7FA; border-radius: 6px; padding: 12px 14px;">
+              <div style="font-size: 20px; font-weight: 700; color: #00B4D8; min-width: 32px;">↗</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #2C2C2A;">External Datasets</div>
+                <div style="font-size: 12px; color: #73726C;">Third-party body scan research data</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; background: #FDF9EC; border-radius: 6px; padding: 12px 14px;">
+              <div style="font-size: 20px; font-weight: 700; color: #E9B949; min-width: 32px;">↗</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #2C2C2A;">Historical Archives</div>
+                <div style="font-size: 12px; color: #73726C;">Decades of Nike scan collections</div>
+              </div>
+            </div>
+            <div style="background: #2C2C2A; border-radius: 6px; padding: 12px 14px; text-align: center;">
+              <div style="font-size: 13px; font-weight: 600; color: #FFFFFF;">1.1M Scans → Single Platform</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="case-split">
-      <div class="case-visual-img" style="background: #F8F8F6; border: 1px solid #E8E6DF; min-height: 280px; padding: 32px;">
-        <div style="text-align: center; padding: 20px;">
-          <div style="font-size: 52px; margin-bottom: 20px;">🔍</div>
-          <p style="font-size: 15px; color: #4A4A4A; line-height: 1.65; margin: 0 0 16px 0;"><strong style="color: #2C2C2A;">"What is the average inseam for women aged 25–35 in Southeast Asia?"</strong></p>
-          <p style="font-size: 13px; color: #73726C; line-height: 1.6; margin: 0;">Any Nike stakeholder — scientist, designer, or director — could ask questions like this and get answers backed by real scan data.</p>
+      <div class="case-visual" style="padding: 0; border: none; min-height: auto;">
+        <div class="platform-diagram">
+          <div class="platform-diagram-title">BodyHub Platform — Query Layer</div>
+          <div class="platform-layer-label">Stakeholder Types</div>
+          <div class="platform-row">
+            <div class="platform-cell">NSRL Scientists</div>
+            <div class="platform-cell">Apparel Designers</div>
+            <div class="platform-cell">Marketing Directors</div>
+          </div>
+          <div style="text-align: center; color: #D3D1C7; margin: 4px 0;">↓ ↓ ↓</div>
+          <div class="platform-layer-label">Shared Infrastructure</div>
+          <div class="platform-row">
+            <div class="platform-cell" style="background: #FDF3ED;">Body Data Query Engine</div>
+            <div class="platform-cell" style="background: #E8F7FA;">Morphotype Architecture</div>
+            <div class="platform-cell" style="background: #FDF9EC;">3D-CAD Fit Tools</div>
+          </div>
+          <div style="text-align: center; color: #D3D1C7; margin: 4px 0;">↓</div>
+          <div class="platform-layer-label">Outcomes</div>
+          <div class="platform-row">
+            <div class="platform-cell">Grade Rules</div>
+            <div class="platform-cell">Size Systems</div>
+            <div class="platform-cell">Fit Validation</div>
+          </div>
         </div>
       </div>
       <div class="case-split-text">
-        <h3>The Question-Answering Platform</h3>
+        <h3>The BodyHub Platform</h3>
         <ul>
-          <li>Built a platform that let anyone at Nike query the body scan database — not just data scientists</li>
-          <li>Designers could ask: "What does the p5 to p95 range look like for this measurement?"</li>
-          <li>Executives could ask: "How does our women's size M fit across different global markets?"</li>
-          <li>Scientists could run population-level biomechanical analyses without writing SQL</li>
-          <li>Launched "Fit for Everybody" — the initiative that embedded body data into Nike's sizing process</li>
+          <li>Built BodyHub: a query platform that let anyone at Nike, from sport scientists to marketing leads, get population-level answers from the scan database</li>
+          <li>Designed the platform to serve very different user types without requiring each to become a data scientist. The interface adapted to the question, not the other way around.</li>
+          <li>Integrated 3D-CAD fit tools directly into designer workflows, replacing subjective fit sessions with data-driven geometry validation</li>
+          <li>Secured executive sponsorship and multiple rounds of funding by demonstrating measurable ROI at each platform milestone</li>
         </ul>
       </div>
     </div>
 
     <div class="case-split">
       <div class="case-split-text">
-        <h3>Building the Team from Scratch</h3>
-        <p style="font-size: 15px; color: #4A4A4A; margin-bottom: 16px;">None of this was possible without the right people. I hired and led the cross-functional team that built it.</p>
+        <h3>Teams Built from Scratch</h3>
         <ul>
-          <li>Hired engineering, ML/CV, and design functions from zero</li>
-          <li>Built a team with depth in computer vision, body shape modeling, data engineering, and product design</li>
-          <li>Created the org structure that could sustain a long-horizon infrastructure build inside a fast-moving consumer company</li>
-          <li>Secured multiple rounds of executive sponsorship and funding</li>
+          <li>Hired and led three teams from zero: Engineering (platform and data infrastructure), ML/CV (model development and validation), and Design (tooling and stakeholder interfaces)</li>
+          <li>Built a cross-functional operating model where research, engineering, and design worked in sprint cycles, not sequential handoffs</li>
+          <li>Established an inclusive, transparent leadership culture that maintained team motivation and retention across a five-year initiative</li>
+          <li>Partnered with product leaders across Nike's digital creation organization to align roadmaps with broader strategy</li>
         </ul>
       </div>
-      <div style="padding: 8px 0;">
-        <div class="team-grid">
-          <div class="team-chip">
-            <div class="team-chip-title">Engineering</div>
-            <div class="team-chip-desc">Data pipelines, platform infra, APIs</div>
-          </div>
-          <div class="team-chip">
-            <div class="team-chip-title">ML / CV</div>
-            <div class="team-chip-desc">Body shape models, inference, analysis</div>
-          </div>
-          <div class="team-chip">
-            <div class="team-chip-title">Design</div>
-            <div class="team-chip-desc">Platform UX, data visualization</div>
-          </div>
-          <div class="team-chip">
-            <div class="team-chip-title">Data Science</div>
-            <div class="team-chip-desc">Population statistics, sizing models</div>
-          </div>
-          <div class="team-chip">
-            <div class="team-chip-title">Research</div>
-            <div class="team-chip-desc">Scan protocols, field studies</div>
-          </div>
-          <div class="team-chip">
-            <div class="team-chip-title">Strategy</div>
-            <div class="team-chip-desc">Roadmap, exec alignment, funding</div>
-          </div>
-        </div>
+      <div class="case-split-text">
+        <h3>Inclusive Design Outcomes</h3>
+        <ul>
+          <li><strong>Plus-size recalibration:</strong> Rebuilt grade rules from the data up for extended sizes, moving away from the industry-standard practice of proportionally scaling from a base size that didn't represent plus-size body geometry</li>
+          <li><strong>Gender-fluid kids sizing:</strong> Developed size systems for kids' products that accounted for the full range of body proportions, not binary gender assumptions</li>
+          <li><strong>MLB sizing consolidation:</strong> Reduced thousands of historical patterns to a 32-size matrix grounded in actual athlete body data. Less manufacturing complexity, better fit across the league.</li>
+          <li><strong>High-difficulty silhouettes:</strong> Applied body type clustering to bra and tight fit validation, categories where poor fit had historically driven the highest return rates</li>
+        </ul>
       </div>
     </div>
 
     <div class="key-insight">
-      <p><strong>Key insight:</strong> Body data only becomes infrastructure when it's accessible to everyone who needs it — not just the scientists who collected it. The platform succeeded because it met different stakeholders in their own language: measurement percentiles for designers, population statistics for scientists, and business impact metrics for executives. One database. Many interfaces. That's what infrastructure looks like.</p>
+      <p><strong>Key insight:</strong> The goal was never to build a better sizing chart. The goal was to make body data a permanent capability, infrastructure that any team could build on rather than a project that any team could defund. That distinction is what determined every architectural and organizational decision along the way.</p>
+    </div>
+  </div>
+
+  <!-- SPECIFIC OUTPUTS -->
+  <div class="case-section" style="padding-top: 0;">
+    <div class="case-label">Key Outputs</div>
+    <h2>Four initiatives that changed what Nike made</h2>
+    <div class="outputs-grid">
+      <div class="output-card">
+        <div class="output-card-accent accent-rust">Inclusive Sizing</div>
+        <h4>Plus-Size Recalibration</h4>
+        <p>Rebuilt extended size grade rules from body scan data, not scaled-up base sizes. First time Nike's plus-size products were graded against the actual geometry of the bodies that wear them.</p>
+      </div>
+      <div class="output-card">
+        <div class="output-card-accent accent-cyan">Kids Apparel</div>
+        <h4>Gender-Fluid Kids Sizing</h4>
+        <p>Developed size systems for kids' products grounded in actual child body proportions, removing binary gender assumptions from categories where they didn't reflect how kids' bodies are shaped.</p>
+      </div>
+      <div class="output-card">
+        <div class="output-card-accent accent-mustard">MLB Partnership</div>
+        <h4>Uniform Sizing Consolidation</h4>
+        <p>Reduced thousands of historical MLB uniform patterns to a 32-size matrix derived from athlete body scan data. Less manufacturing complexity, better fit across the league.</p>
+      </div>
+      <div class="output-card">
+        <div class="output-card-accent accent-rust">Design Tools</div>
+        <h4>3D-CAD Fit Validation</h4>
+        <p>Built CAD fit tools that gave designers direct access to population body data during the creation process, replacing subjective fit sessions with geometry validated against the scan database.</p>
+      </div>
+    </div>
+
+    <div class="video-note">
+      <strong>Fit for Everybody — internal demonstration video available on request.</strong><br>
+      The full platform walkthrough is not publicly shared per NDA. Happy to discuss in detail during a discovery call.
     </div>
   </div>
 
@@ -240,47 +351,24 @@
   <div class="case-section" style="padding-top: 0;">
     <div class="outcome-box">
       <div class="outcome-label">The Outcome</div>
-      <h3>Body data became infrastructure at Nike.</h3>
-      <p>The platform launched as "Fit for Everybody" — an initiative that embedded body scan data into Nike's sizing and product creation workflows. A 1.1M-scan database moved from a research asset to an operational tool used by design, science, and business teams across the organization. Executive sponsorship was secured across multiple rounds of funding, making body data a sustained strategic priority rather than a one-off project.</p>
-    </div>
-  </div>
-
-  <!-- THE PROCESS -->
-  <div class="case-section" style="padding-top: 0;">
-    <div class="case-label">The Process</div>
-    <h2>Five years. Three phases.</h2>
-    <div class="process-grid">
-      <div class="process-card">
-        <div class="process-icon">🏗</div>
-        <h4>1. Foundation</h4>
-        <p>Consolidated 1.1M body scans. Established data governance, quality standards, and the team to sustain it. Secured initial executive sponsorship.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-icon">🔧</div>
-        <h4>2. Platform</h4>
-        <p>Built the question-answering platform. Translated body data into interfaces that designers, scientists, and executives could each use independently.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-icon">📐</div>
-        <h4>3. Embed</h4>
-        <p>Launched "Fit for Everybody." Body data moved from a platform into Nike's product creation process — sizing, grading, and fit decisions grounded in real bodies.</p>
-      </div>
+      <h3>Body data became infrastructure at Nike — not a project, a capability.</h3>
+      <p>After five years, body data was no longer a research initiative at Nike. It was a permanent part of how the company designed, sized, and validated products. Design teams adopted new creation methods. Return rates on high-difficulty silhouettes improved. The BodyHub platform became a shared resource across multiple business units. The work established a new standard for what inclusive sizing can mean at global scale.</p>
     </div>
   </div>
 
   <!-- WHY IT MATTERS -->
   <div class="case-section" style="padding-top: 0;">
     <div class="case-label">Why It Matters</div>
-    <h2>The playbook for body data at enterprise scale</h2>
-    <p>Building body data infrastructure inside a $50B company is not a technical problem — it's an organizational one. The scan data existed. The ML existed. What didn't exist was the platform, the team, the access model, and the executive mandate to make body data a first-class input to product decisions.</p>
-    <p>This is the through-line across SOLS, Body Labs, Amazon, and Nike: the technology to understand the human body at scale has existed for years. The hard work is building the organizational infrastructure — the data layer, the interfaces, the teams, the buy-in — that lets companies actually act on it.</p>
+    <h2>Infrastructure thinking at product scale</h2>
+    <p>The Nike work is the fullest expression of a principle that runs through everything since SOLS: physical products are data problems. The question was never "how do we make better orthotics" or "how do we make better leggings." It was always: how do we build the data infrastructure that makes better products inevitable?</p>
+    <p>At Nike, that meant building something that would outlast any individual initiative, a platform that didn't require ongoing advocacy to justify its existence because the teams who used it couldn't imagine working without it. That's the definition of infrastructure that worked.</p>
   </div>
 
   <!-- CTA -->
   <div class="case-section" style="padding-top: 0;">
     <div class="case-cta">
-      <h3>Transforming how your company uses body data?</h3>
-      <p>I help organizations build the data layer, platform, and team structure to make body data a first-class input to product decisions — at any scale.</p>
+      <h3>Building something in this space?</h3>
+      <p>I help teams build body data infrastructure that becomes part of how products are made — not a project that ends when the budget cycle turns.</p>
       <div class="cta-buttons">
         <a href="/contact.html" class="btn-primary">Get in touch</a>
         <a href="https://calendar.app.google/raxVFKUH1ApF9yvz9" target="_blank" rel="noopener" class="btn-secondary">Book a call →</a>
