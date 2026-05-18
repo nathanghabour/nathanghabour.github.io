@@ -32,9 +32,7 @@
 
     <!-- PRIMARY: CONTACT FORM -->
     <div class="form-card">
-      <form
-        action="https://formspree.io/f/xpwrnkdv"
-        method="POST">
+      <form id="contact-form">
 
         <div class="form-group">
           <label for="name">Name <span class="form-required">*</span></label>
@@ -83,6 +81,32 @@
         <button type="submit" class="submit-btn">Send message</button>
       </form>
     </div>
+
+    <script>
+      document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name     = document.getElementById('name').value;
+        var email    = document.getElementById('email').value;
+        var company  = document.getElementById('company').value;
+        var message  = document.getElementById('message').value;
+        var service  = document.getElementById('service').value;
+        var timeframe = document.getElementById('timeframe').value;
+
+        var subject = 'New inquiry from ' + name + (company ? ' (' + company + ')' : '');
+        var body =
+          'Name: ' + name + '\n' +
+          'Email: ' + email + '\n' +
+          (company ? 'Company: ' + company + '\n' : '') +
+          (service  ? 'Service area: ' + service + '\n' : '') +
+          (timeframe ? 'Timeframe: ' + timeframe + '\n' : '') +
+          '\nMessage:\n' + message;
+
+        window.location.href =
+          'mailto:hello@nathanghabour.com' +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+      });
+    </script>
 
     <!-- DIVIDER -->
     <div class="contact-divider">
